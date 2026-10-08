@@ -1,0 +1,1144 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f6f8;
+    color: #17181a;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 18px 16px 100px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hello {
+    color: #888;
+    font-size: 14px;
+}
+
+.header h1 {
+    margin: 4px 0 0;
+    font-size: 30px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #17181a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+
+/* =========================================
+   TODAY
+========================================= */
+
+.today-card {
+    background: #17181a;
+    color: white;
+    border-radius: 24px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.today-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.date {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.orders-count {
+    text-align: right;
+}
+
+.orders-count strong {
+    display: block;
+    font-size: 28px;
+}
+
+.orders-count span {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.today-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-top: 17px;
+    border-top: 1px solid #343434;
+}
+
+.today-bottom span {
+    display: block;
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.today-bottom strong {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0 12px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.section-title button {
+    border: none;
+    background: none;
+    color: #1677ff;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.empty-order,
+.empty-block {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, .04);
+}
+
+.empty-block {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15px;
+    color: #888;
+}
+
+.empty-icon {
+    font-size: 28px;
+}
+
+.empty-order strong,
+.empty-order span {
+    display: block;
+}
+
+.empty-order span {
+    color: #888;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   NEAREST
+========================================= */
+
+.nearest-card {
+    background: white;
+    border-radius: 20px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, .05);
+}
+
+.nearest-time {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.nearest-info {
+    flex: 1;
+}
+
+.nearest-info strong,
+.nearest-info span,
+.nearest-info small {
+    display: block;
+}
+
+.nearest-info span {
+    margin-top: 3px;
+    font-size: 14px;
+}
+
+.nearest-info small {
+    margin-top: 5px;
+    color: #888;
+}
+
+
+/* =========================================
+   NEW ORDER
+========================================= */
+
+.new-order,
+.services-button {
+    width: 100%;
+    border: none;
+    background: white;
+    border-radius: 20px;
+    padding: 17px;
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, .05);
+}
+
+.new-order .plus {
+    width: 45px;
+    height: 45px;
+    border-radius: 14px;
+    background: #17181a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.new-order strong,
+.new-order span,
+.services-button strong,
+.services-button span {
+    display: block;
+}
+
+.new-order span,
+.services-button span {
+    color: #888;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.arrow {
+    margin-left: auto;
+    color: #999;
+    font-size: 20px;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.menu-card {
+    border: none;
+    background: white;
+    border-radius: 18px;
+    padding: 16px;
+    text-align: left;
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, .04);
+}
+
+.menu-card strong,
+.menu-card span {
+    display: block;
+}
+
+.menu-card span {
+    margin-top: 4px;
+    color: #888;
+    font-size: 12px;
+}
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.blue {
+    background: #e8f1ff;
+}
+
+.green {
+    background: #e8f8ef;
+}
+
+.orange {
+    background: #fff0df;
+}
+
+.purple {
+    background: #f0eaff;
+}
+
+.services-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 14px;
+    background: #fff0df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(650px, 100%);
+    height: 72px;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.nav-item {
+    border: none;
+    background: none;
+    color: #888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-item.active {
+    color: #17181a;
+}
+
+.nav-item span {
+    font-size: 22px;
+}
+
+.nav-item small {
+    font-size: 10px;
+}
+
+.nav-add {
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+    border: none;
+    background: #17181a;
+    color: white;
+    font-size: 28px;
+    margin-top: -24px;
+    box-shadow:
+        0 7px 18px rgba(0,0,0,.2);
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin: 3px 0 0;
+}
+
+.page-subtitle {
+    color: #888;
+    font-size: 12px;
+}
+
+.back-button {
+    border: none;
+    background: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    font-size: 22px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-section {
+    background: white;
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 12px;
+}
+
+.form-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    background: #fafafa;
+    border-radius: 13px;
+    padding: 14px;
+    margin-top: 6px;
+    outline: none;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.total strong {
+    font-size: 22px;
+}
+
+.save-order {
+    width: 100%;
+    border: none;
+    background: #17181a;
+    color: white;
+    border-radius: 16px;
+    padding: 16px;
+    font-weight: 800;
+    margin: 5px 0 20px;
+}
+
+.primary-small {
+    width: 100%;
+    border: none;
+    background: #17181a;
+    color: white;
+    border-radius: 14px;
+    padding: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   SCHEDULE
+========================================= */
+
+.schedule-date {
+    background: white;
+    border-radius: 18px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.schedule-date button {
+    border: none;
+    background: #f3f4f6;
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    font-size: 25px;
+}
+
+.schedule-date div {
+    text-align: center;
+}
+
+.schedule-date span,
+.schedule-date strong {
+    display: block;
+}
+
+.schedule-date span {
+    color: #888;
+    font-size: 12px;
+}
+
+.schedule-date strong {
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-box {
+    margin-bottom: 12px;
+}
+
+.search-box input {
+    margin: 0;
+    background: white;
+}
+
+
+/* =========================================
+   FILTERS
+========================================= */
+
+.filter-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+}
+
+.filter {
+    white-space: nowrap;
+    border: none;
+    background: white;
+    border-radius: 12px;
+    padding: 9px 13px;
+    color: #777;
+}
+
+.filter.active {
+    background: #17181a;
+    color: white;
+}
+
+
+/* =========================================
+   ORDER CARD
+========================================= */
+
+.order-card {
+    background: white;
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 10px;
+    box-shadow:
+        0 4px 18px rgba(0,0,0,.04);
+}
+
+.order-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-card-top strong {
+    font-size: 20px;
+}
+
+.order-card-title {
+    font-weight: 800;
+    margin-top: 12px;
+}
+
+.order-card-client,
+.order-card-address {
+    color: #777;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.order-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+}
+
+.order-card-bottom span {
+    color: #888;
+    font-size: 12px;
+}
+
+.order-card-bottom strong {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 6px 9px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.status-new {
+    background: #fff1d9;
+    color: #a76b00;
+}
+
+.status-work {
+    background: #e9f1ff;
+    color: #2266c5;
+}
+
+.status-done {
+    background: #e6f7ed;
+    color: #16834a;
+}
+
+.status-cancel {
+    background: #ffe8e8;
+    color: #c33;
+}
+
+
+/* =========================================
+   ORDER DETAIL
+========================================= */
+
+.order-detail-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow:
+        0 4px 20px rgba(0,0,0,.05);
+}
+
+.order-detail-service {
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.order-detail-status {
+    margin-bottom: 10px;
+}
+
+.order-detail-row {
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-detail-label {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.order-detail-value {
+    font-weight: 600;
+}
+
+.order-detail-price {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.order-detail-phone {
+    color: #1680ff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.order-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.order-action-button {
+    border: none;
+    border-radius: 14px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.call-client {
+    background: #e7f7ee;
+    color: #16834a;
+}
+
+.change-status {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.secondary-button {
+    background: #f1f2f4;
+    color: #333;
+}
+
+
+/* =========================================
+   CLIENTS
+========================================= */
+
+.client-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: white;
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow:
+        0 4px 16px rgba(0,0,0,.04);
+}
+
+.client-avatar,
+.client-profile-avatar {
+    background: #eef2ff;
+    color: #4f46e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    border-radius: 50%;
+}
+
+.client-avatar {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+}
+
+.client-main {
+    flex: 1;
+}
+
+.client-main strong,
+.client-main span,
+.client-main small {
+    display: block;
+}
+
+.client-main span {
+    color: #555;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.client-main small {
+    color: #999;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.client-arrow {
+    color: #aaa;
+    font-size: 20px;
+}
+
+.client-profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    text-align: center;
+}
+
+.client-profile-avatar {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 12px;
+    font-size: 30px;
+}
+
+.client-profile-card h3 {
+    font-size: 24px;
+    margin: 0 0 15px;
+}
+
+.client-phone-button {
+    display: block;
+    padding: 13px;
+    border-radius: 13px;
+    background: #e7f7ee;
+    color: #16834a;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.client-info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    text-align: left;
+    padding: 13px 0;
+    border-top: 1px solid #eee;
+}
+
+.client-info-row span {
+    color: #888;
+}
+
+.client-info-row strong {
+    text-align: right;
+    max-width: 65%;
+}
+
+.client-section-title {
+    font-size: 19px;
+    font-weight: 800;
+    margin: 22px 0 12px;
+}
+
+.client-order-card {
+    background: white;
+    border-radius: 17px;
+    padding: 16px;
+    margin-bottom: 10px;
+}
+
+.client-order-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.client-order-top span {
+    color: #888;
+    font-size: 12px;
+}
+
+.client-order-info {
+    color: #777;
+    font-size: 13px;
+    margin-top: 9px;
+}
+
+.client-order-price {
+    font-size: 19px;
+    font-weight: 900;
+    margin-top: 11px;
+}
+
+.client-no-orders {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    color: #888;
+    text-align: center;
+}
+
+
+/* =========================================
+   FINANCE
+========================================= */
+
+.finance-period {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.finance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.finance-card {
+    background: white;
+    border-radius: 18px;
+    padding: 16px;
+}
+
+.finance-card span,
+.finance-card strong {
+    display: block;
+}
+
+.finance-card span {
+    color: #888;
+    font-size: 12px;
+}
+
+.finance-card strong {
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+.main-finance {
+    grid-column: 1 / -1;
+    background: #17181a;
+    color: white;
+}
+
+.main-finance span {
+    color: #aaa;
+}
+
+.expense-card {
+    background: white;
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 9px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.expense-card strong,
+.expense-card span {
+    display: block;
+}
+
+.expense-card span {
+    color: #888;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.service-card {
+    background: white;
+    border-radius: 17px;
+    padding: 16px;
+    margin-bottom: 9px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.service-card strong,
+.service-card span {
+    display: block;
+}
+
+.service-card span {
+    color: #888;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.service-price {
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+    text-align: center;
+    color: #888;
+    padding: 30px;
+}
+
+
+@media (max-width: 420px) {
+
+    .app {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .menu-grid {
+        gap: 8px;
+    }
+
+    .finance-grid {
+        gap: 8px;
+    }
+
+}/* =====================================================
+   СТАТУСЫ ЗАКАЗОВ
+===================================================== */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-new {
+    color: #b45309;
+    background: #fff7ed;
+}
+
+.status-work {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.status-done {
+    color: #15803d;
+    background: #f0fdf4;
+}
+
+.status-cancel {
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+
+/* Выпадающий список статуса */
+
+.order-status-select {
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    appearance: auto;
+}
+
+.order-status-select.status-new {
+    color: #b45309;
+    background: #fff7ed;
+    border-color: #fed7aa;
+}
+
+.order-status-select.status-work {
+    color: #2563eb;
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.order-status-select.status-done {
+    color: #15803d;
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.order-status-select.status-cancel {
+    color: #dc2626;
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+
+/* Статус на ближайшем заказе */
+
+.nearest-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-left: auto;
+}

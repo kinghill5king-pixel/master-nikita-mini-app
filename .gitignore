@@ -1,0 +1,6 @@
+node_modules/
+master-nikita.db
+master-nikita.db-shm
+master-nikita.db-wal
+.env
+.DS_Store

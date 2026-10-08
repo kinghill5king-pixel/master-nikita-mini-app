@@ -1,0 +1,1117 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>Мастер Никита</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="app">
+
+
+    <!-- =========================================
+         ГЛАВНАЯ
+    ========================================== -->
+
+    <main id="home-page" class="page">
+
+        <header class="header">
+
+            <div>
+
+                <div class="hello">
+                    Добрый день 👋
+                </div>
+
+                <h1>
+                    Никита
+                </h1>
+
+            </div>
+
+            <div class="avatar">
+                Н
+            </div>
+
+        </header>
+
+
+        <section class="today-card">
+
+            <div class="today-top">
+
+                <div>
+
+                    <div class="label">
+                        Сегодня
+                    </div>
+
+                    <div
+                        class="date"
+                        id="home-date"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+                <div class="orders-count">
+
+                    <strong id="today-orders">
+                        0
+                    </strong>
+
+                    <span>
+                        выездов
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="today-bottom">
+
+                <div>
+
+                    <span>
+                        Выручка
+                    </span>
+
+                    <strong id="today-revenue">
+                        0 ₽
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        В работе
+                    </span>
+
+                    <strong id="today-work">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="section-title">
+
+            <h2>
+                Ближайшая заявка
+            </h2>
+
+            <button onclick="openSchedule()">
+                Все →
+            </button>
+
+        </div>
+
+
+        <section id="nearest-order">
+
+            <div class="empty-order">
+
+                <div class="empty-icon">
+                    📅
+                </div>
+
+                <div>
+
+                    <strong>
+                        Заявок нет
+                    </strong>
+
+                    <span>
+                        Свободный день — можно принимать заказы
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <button
+            class="new-order"
+            onclick="openNewOrder()"
+        >
+
+            <div class="plus">
+                ＋
+            </div>
+
+            <div>
+
+                <strong>
+                    Новая заявка
+                </strong>
+
+                <span>
+                    Добавить клиента и заказ
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+        </button>
+
+
+        <div class="section-title">
+
+            <h2>
+                Разделы
+            </h2>
+
+        </div>
+
+
+        <section class="menu-grid">
+
+            <button
+                onclick="openSchedule()"
+                class="menu-card"
+            >
+
+                <div class="menu-icon blue">
+                    📅
+                </div>
+
+                <strong>
+                    Расписание
+                </strong>
+
+                <span>
+                    Выезды и заказы
+                </span>
+
+            </button>
+
+
+            <button
+                onclick="openClients()"
+                class="menu-card"
+            >
+
+                <div class="menu-icon green">
+                    👥
+                </div>
+
+                <strong>
+                    Клиенты
+                </strong>
+
+                <span>
+                    База клиентов
+                </span>
+
+            </button>
+
+
+            <button
+                onclick="openOrders()"
+                class="menu-card"
+            >
+
+                <div class="menu-icon orange">
+                    📋
+                </div>
+
+                <strong>
+                    Заказы
+                </strong>
+
+                <span>
+                    История работ
+                </span>
+
+            </button>
+
+
+            <button
+                onclick="openFinance()"
+                class="menu-card"
+            >
+
+                <div class="menu-icon purple">
+                    ₽
+                </div>
+
+                <strong>
+                    Финансы
+                </strong>
+
+                <span>
+                    Доходы и расходы
+                </span>
+
+            </button>
+
+        </section>
+
+
+        <button
+            onclick="openServices()"
+            class="services-button"
+        >
+
+            <div class="services-icon">
+                🔧
+            </div>
+
+            <div>
+
+                <strong>
+                    Мои услуги
+                </strong>
+
+                <span>
+                    Управление услугами и ценами
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+        </button>
+
+
+        <nav class="bottom-nav">
+
+            <button
+                class="nav-item active"
+                onclick="showPage('home-page')"
+            >
+
+                <span>⌂</span>
+
+                <small>
+                    Главная
+                </small>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="openSchedule()"
+            >
+
+                <span>▣</span>
+
+                <small>
+                    Расписание
+                </small>
+
+            </button>
+
+
+            <button
+                class="nav-add"
+                onclick="openNewOrder()"
+            >
+                ＋
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="openClients()"
+            >
+
+                <span>♙</span>
+
+                <small>
+                    Клиенты
+                </small>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="openServices()"
+            >
+
+                <span>☰</span>
+
+                <small>
+                    Ещё
+                </small>
+
+            </button>
+
+        </nav>
+
+    </main>
+
+
+    <!-- =========================================
+         НОВЫЙ ЗАКАЗ
+    ========================================== -->
+
+    <main
+        id="new-order-page"
+        class="page hidden"
+    >
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="closeNewOrder()"
+            >
+                ←
+            </button>
+
+            <div>
+
+                <div class="page-subtitle">
+                    Новый заказ
+                </div>
+
+                <h2>
+                    Создать заявку
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <div class="form-title">
+                Клиент
+            </div>
+
+
+            <label>
+
+                Выберите клиента
+
+                <select id="client-select">
+
+                    <option value="">
+                        Новый клиент
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Имя клиента
+
+                <input
+                    id="client-name"
+                    type="text"
+                    placeholder="Например, Иван"
+                >
+
+            </label>
+
+
+            <label>
+
+                Телефон
+
+                <input
+                    id="client-phone"
+                    type="tel"
+                    placeholder="+7 900 000-00-00"
+                >
+
+            </label>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <div class="form-title">
+                Адрес заказа
+            </div>
+
+
+            <label>
+
+                Город
+
+                <input
+                    id="client-city"
+                    type="text"
+                    placeholder="Пушкино"
+                >
+
+            </label>
+
+
+            <label>
+
+                Адрес
+
+                <input
+                    id="client-address"
+                    type="text"
+                    placeholder="Улица, дом, квартира"
+                >
+
+            </label>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <div class="form-title">
+                Работа
+            </div>
+
+
+            <label>
+
+                Услуга
+
+                <select id="service">
+
+                    <option value="">
+                        Выберите услугу
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <div class="two-columns">
+
+                <label>
+
+                    Дата
+
+                    <input
+                        id="order-date"
+                        type="date"
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Время
+
+                    <input
+                        id="order-time"
+                        type="time"
+                    >
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <div class="form-title">
+                Стоимость
+            </div>
+
+
+            <div class="two-columns">
+
+                <label>
+
+                    Работа, ₽
+
+                    <input
+                        id="work-price"
+                        type="number"
+                        placeholder="0"
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Материалы, ₽
+
+                    <input
+                        id="materials-price"
+                        type="number"
+                        placeholder="0"
+                    >
+
+                </label>
+
+            </div>
+
+
+            <div class="total">
+
+                <span>
+                    Итого
+                </span>
+
+                <strong id="total-price">
+                    0 ₽
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <div class="form-title">
+                Комментарий
+            </div>
+
+            <textarea
+                id="order-comment"
+                placeholder="Например: купить сифон перед выездом"
+            ></textarea>
+
+        </div>
+
+
+        <button
+            class="save-order"
+            onclick="saveOrder()"
+        >
+            Сохранить заявку
+        </button>
+
+    </main>
+
+
+    <!-- =========================================
+         РАСПИСАНИЕ
+    ========================================== -->
+
+    <main
+        id="schedule-page"
+        class="page hidden"
+    >
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="goHome()"
+            >
+                ←
+            </button>
+
+            <div>
+
+                <div class="page-subtitle">
+                    Мои выезды
+                </div>
+
+                <h2>
+                    Расписание
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="schedule-date">
+
+            <button onclick="changeScheduleDate(-1)">
+                ‹
+            </button>
+
+            <div>
+
+                <span id="schedule-day">
+                    Сегодня
+                </span>
+
+                <strong id="schedule-date">
+                    —
+                </strong>
+
+            </div>
+
+            <button onclick="changeScheduleDate(1)">
+                ›
+            </button>
+
+        </div>
+
+
+        <div id="schedule-list">
+
+            <div class="loading">
+                Загружаем расписание...
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         ЗАКАЗЫ
+    ========================================== -->
+
+    <main
+        id="orders-page"
+        class="page hidden"
+    >
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="goHome()"
+            >
+                ←
+            </button>
+
+            <div>
+
+                <div class="page-subtitle">
+                    Все работы
+                </div>
+
+                <h2>
+                    Заказы
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                id="orders-search"
+                type="search"
+                placeholder="Поиск заказа или клиента..."
+                oninput="loadOrders()"
+            >
+
+        </div>
+
+
+        <div class="filter-row">
+
+            <button
+                class="filter active"
+                onclick="setOrderFilter('')"
+            >
+                Все
+            </button>
+
+            <button
+                class="filter"
+                onclick="setOrderFilter('Новая')"
+            >
+                Новые
+            </button>
+
+            <button
+                class="filter"
+                onclick="setOrderFilter('В работе')"
+            >
+                В работе
+            </button>
+
+            <button
+                class="filter"
+                onclick="setOrderFilter('Выполнена')"
+            >
+                Выполнены
+            </button>
+
+        </div>
+
+
+        <div id="orders-page-list"></div>
+
+    </main>
+
+
+    <!-- =========================================
+         ЗАКАЗ
+    ========================================== -->
+
+    <main
+        id="order-page"
+        class="page hidden"
+    >
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="closeOrder()"
+            >
+                ←
+            </button>
+
+            <div>
+
+                <div class="page-subtitle">
+                    Подробная информация
+                </div>
+
+                <h2>
+                    Заказ
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div id="order-details">
+
+            <div class="loading">
+                Загружаем заказ...
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         КЛИЕНТЫ
+    ========================================== -->
+
+    <main
+        id="clients-page"
+        class="page hidden"
+    >
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="goHome()"
+            >
+                ←
+            </button>
+
+            <div>
+
+                <div class="page-subtitle">
+                    Моя база
+                </div>
+
+                <h2>
+                    Клиенты
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                id="clients-search"
+                type="search"
+                placeholder="Найти клиента..."
+                oninput="loadClients()"
+            >
+
+        </div>
+
+
+        <button
+            class="primary-small"
+            onclick="openNewOrder()"
+        >
+            ＋ Новый заказ
+        </button>
+
+
+        <div id="clients-list"></div>
+
+    </main>
+
+
+    <!-- =========================================
+         КЛИЕНТ
+    ========================================== -->
+
+    <main
+        id="client-page"
+        class="page hidden"
+    >
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="closeClient()"
+            >
+                ←
+            </button>
+
+            <div>
+
+                <div class="page-subtitle">
+                    Карточка клиента
+                </div>
+
+                <h2>
+                    Клиент
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div id="client-details"></div>
+
+    </main>
+
+
+    <!-- =========================================
+         ФИНАНСЫ
+    ========================================== -->
+
+    <main
+        id="finance-page"
+        class="page hidden"
+    >
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="goHome()"
+            >
+                ←
+            </button>
+
+            <div>
+
+                <div class="page-subtitle">
+                    Деньги
+                </div>
+
+                <h2>
+                    Финансы
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="finance-period">
+
+            <label>
+
+                С
+
+                <input
+                    id="finance-from"
+                    type="date"
+                >
+
+            </label>
+
+
+            <label>
+
+                По
+
+                <input
+                    id="finance-to"
+                    type="date"
+                >
+
+            </label>
+
+        </div>
+
+
+        <button
+            class="save-order"
+            onclick="loadFinance()"
+        >
+            Обновить
+        </button>
+
+
+        <div
+            id="finance-content"
+            class="finance-content"
+        ></div>
+
+
+        <div class="section-title">
+
+            <h2>
+                Добавить расход
+            </h2>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <label>
+
+                Дата
+
+                <input
+                    id="expense-date"
+                    type="date"
+                >
+
+            </label>
+
+
+            <label>
+
+                Категория
+
+                <input
+                    id="expense-category"
+                    type="text"
+                    placeholder="Материалы, бензин..."
+                >
+
+            </label>
+
+
+            <label>
+
+                Сумма
+
+                <input
+                    id="expense-amount"
+                    type="number"
+                    placeholder="0"
+                >
+
+            </label>
+
+
+            <label>
+
+                Комментарий
+
+                <textarea
+                    id="expense-comment"
+                    placeholder="Комментарий"
+                ></textarea>
+
+            </label>
+
+
+            <button
+                class="save-order"
+                onclick="addExpense()"
+            >
+                Добавить расход
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         УСЛУГИ
+    ========================================== -->
+
+    <main
+        id="services-page"
+        class="page hidden"
+    >
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="goHome()"
+            >
+                ←
+            </button>
+
+            <div>
+
+                <div class="page-subtitle">
+                    Каталог
+                </div>
+
+                <h2>
+                    Мои услуги
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="primary-small"
+            onclick="addService()"
+        >
+            ＋ Добавить услугу
+        </button>
+
+
+        <div id="services-list"></div>
+
+    </main>
+
+
+</div>
+
+
+<script src="app.js?v=11"></script>
+
+</body>
+</html>
